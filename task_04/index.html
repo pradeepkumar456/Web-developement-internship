@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#">MySite</a>
+    <nav>
+      <button class="nav-toggle" aria-label="Open menu">☰</button>
+      <ul class="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+ <main class="container">
+    <section class="hero">
+      <h1>Welcome to my responsive site</h1>
+      <p>Short intro text that wraps nicely on small screens.</p>
+      <a class="btn" href="#">Get Started</a>
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <h3>Card 1</h3>
+        <p>Some quick example content.</p>
+      </article>
+      <article class="card">
+        <h3>Card 2</h3>
+        <p>Some quick example content.</p>
+      </article>
+      <article class="card">
+        <h3>Card 3</h3>
+        <p>Some quick example content.</p>
+      </article>
+    </section>
+
+    <section class="two-col">
+      <div class="col">
+        <h2>Article</h2>
+        <p>Left column content (e.g. article text). Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+      <aside class="col">
+        <h3>Sidebar</h3>
+        <p>Right column content (e.g. links, ads).</p>
+      </aside>
+    </section>
+
+    <form class="contact-form form" action="#" method="post">
+      <label>
+        Name
+        <input type="text" name="name" />
+      </label>
+      <label>
+        Message
+        <textarea name="message"></textarea>
+      </label>
+      <button class="btn" type="submit">Send</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 MySite</div>
+  </footer>
+
+  <script>
+    // Hamburger toggle for mobile
+    const btn = document.querySelector('.nav-toggle');
+    const list = document.querySelector('.nav-list');
+    if (btn && list) {
+      btn.addEventListener('click', () => list.classList.toggle('open'));
+    }
+  </script>
+</body>
+</html>

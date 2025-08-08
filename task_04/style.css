@@ -1,0 +1,107 @@
+/* ======= Base / Mobile-first ======= */
+:root{
+  --max-w: 1200px;
+  --gap: 1rem;
+  --accent: #0b78d1;
+  --muted: #6b7280;
+  --bg: #ffffff;
+  --card-bg: #fff;
+  --radius: 12px;
+  --text: #111827;
+  --base: 16px;
+}
+
+/* Reset / Box sizing */
+*{box-sizing:border-box}
+html{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; font-size:16px; -webkit-font-smoothing:antialiased}
+body{margin:0; background:#f5f7fb; color:var(--text); line-height:1.45; -webkit-font-smoothing:antialiased}
+
+/* Container */
+.container{width:100%; padding:0 1rem; margin:0 auto; max-width:100%}
+.container.center{max-width:var(--max-w); margin-left:auto; margin-right:auto}
+
+/* Utilities */
+.h-center{text-align:center}
+.mt-1{margin-top:1rem}
+.mb-1{margin-bottom:1rem}
+.hidden-mobile{display:none}
+
+/* Links / buttons */
+a{color:inherit}
+.btn{
+  display:inline-block;
+  padding:0.6rem 1rem;
+  border-radius:10px;
+  text-decoration:none;
+  background:var(--accent);
+  color:#fff;
+  font-weight:600;
+  border:0;
+  cursor:pointer;
+  line-height:1;
+  min-height:44px; /* touch target */
+}
+
+/* Header / Nav (mobile-first) */
+.site-header{background:var(--bg); border-bottom:1px solid #eaecef; position:sticky; top:0; z-index:50}
+.header-inner{display:flex; align-items:center; justify-content:space-between; gap:0.75rem; padding:0.75rem 0}
+.logo{font-weight:700; color:var(--accent); font-size:1.125rem; text-decoration:none}
+.nav-toggle{background:transparent; border:0; font-size:1.25rem; padding:0.5rem; cursor:pointer}
+.nav-list{list-style:none; margin:0; padding:0; display:none; position:absolute; right:1rem; top:calc(100% + 8px); background:var(--bg); box-shadow:0 8px 24px rgba(10,10,10,0.08); border-radius:10px; overflow:hidden; min-width:160px}
+.nav-list.open{display:block}
+.nav-list li a{display:block; padding:0.6rem 0.9rem; text-decoration:none; color:var(--text); font-weight:500}
+
+/* Hero / Intro */
+.hero{padding:1.5rem 0}
+.hero h1{margin:0 0 .5rem; font-size:clamp(1.25rem, 4vw, 1.9rem)}
+.hero p{margin:0 0 1rem; color:var(--muted)}
+
+/* Responsive card grid (mobile: 1 column) */
+.cards{display:grid; gap:0.9rem; grid-template-columns:1fr; margin:1rem 0}
+.card{background:var(--card-bg); padding:1rem; border-radius:var(--radius); box-shadow:0 6px 18px rgba(13,20,30,0.05)}
+
+/* Two-column layout stacks on mobile */
+.two-col{display:block; gap:1rem; margin:1rem 0}
+.two-col .col{background:var(--card-bg); padding:1rem; border-radius:10px; margin-bottom:1rem}
+
+/* Forms */
+.form{display:flex; flex-direction:column; gap:0.6rem}
+.form label{display:flex; flex-direction:column; font-size:0.95rem}
+.form input, .form textarea, .form select{padding:0.6rem; border:1px solid #e6e9ee; border-radius:8px; font-size:1rem}
+.form button{align-self:flex-start}
+
+/* Media */
+img, iframe, video{max-width:100%; height:auto; display:block; border-radius:8px}
+
+/* Footer */
+.site-footer{padding:1rem 0; color:var(--muted); font-size:0.95rem; text-align:center}
+
+/* Accessibility */
+button, .btn, a{touch-action:manipulation}
+.visually-hidden{position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap}
+
+/* ======= Tablet / Small desktop (>= 600px) ======= */
+@media (min-width:600px){
+  .container{padding:0 1.25rem; max-width:var(--max-w)}
+  .nav-toggle{display:none}
+  .nav-list{position:static; display:flex; background:transparent; box-shadow:none; gap:0.5rem}
+  .nav-list li a{padding:0 0.6rem}
+  .cards{grid-template-columns:repeat(2, 1fr)}
+  .two-col{display:grid; grid-template-columns:2fr 1fr; gap:1rem}
+  .header-inner{padding:1rem 0}
+  .hero{padding:2rem 0}
+}
+
+/* ======= Desktop large (>= 900px) ======= */
+@media (min-width:900px){
+  .cards{grid-template-columns:repeat(3, 1fr)}
+  .hero{display:flex; align-items:center; justify-content:space-between; gap:2rem}
+  .hero h1{font-size:clamp(1.6rem, 2.5vw, 2.6rem)}
+  .hidden-mobile{display:block}
+}
+
+/* ======= Helpful small fixes ======= */
+/* prevent fixed-width elements breaking layout */
+img[width], img[height]{max-width:100%; height:auto}
+table{width:100%; overflow:auto; display:block}
+pre{white-space:pre-wrap; word-break:break-word}
